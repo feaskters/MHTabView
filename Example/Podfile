@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MHTabView_Example' do
+  pod 'MHTabView', :path => '../'
+
+  target 'MHTabView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
