@@ -15,6 +15,11 @@
   + [usage](#usage)
 
 - [Example](#Example)
+  + [unscrollable](#unscrollable)
+  + [scrollable](#scrollable)
+  + [autoscrollable](#autoscrollable)
+  + [autoUnscrollable](#autoUnscrollable)
+  + [other](#other)
 - [Author](#Author)
 - [License](#License)
 
@@ -54,7 +59,56 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 tabview.titleStyle = .unscrollable
 ```
 
-![unscrollable](https://s1.ax1x.com/2020/04/27/Jfg1HJ.gif)
+![unscrollable](https://s1.ax1x.com/2020/04/27/JfgVNn.gif)
+
+ - ### scrollable
+
+```swift
+tabview.titleStyle = .scrollable
+```
+
+![scrollable](https://s1.ax1x.com/2020/04/27/JfgfKS.gif)
+
+ - ### autoscrollable
+
+```swift
+tabview.titleStyle = .autoScrollable
+```
+
+![autoscrollable](https://s1.ax1x.com/2020/04/27/JfgZhq.gif)
+
+ - ### autoUnscrollable
+
+```swift
+tabview.titleStyle = .autoUnscrollable
+```
+
+![autoUnscrollable](https://s1.ax1x.com/2020/04/27/Jfg1HJ.gif)
+
+ - ### other
+ 
+  1. change color
+  ```swift
+  tabview.defaultColor = .blue
+  tabview.selectedColor = .red
+  ```
+  
+  2. change width for scrollable style
+  ```swift
+  tabview.style = .scrollable
+  tabview.tabWidth = 150
+  ```
+  
+  3. usage of delegate
+  
+  ```swift
+  protocol MHTabViewDelegate {
+    /**停止滚动后的回调函数(index, scrollview) -> (当前滚动到的位置, scrollView属性 )*/
+    func MHTabViewDidEndDecelerating(_ index: Int, _ scrollview: UIScrollView)
+  }
+  ```
+
+  ![delegate](https://s1.ax1x.com/2020/04/27/JfgEAs.gif)
 
 ## Author
 
