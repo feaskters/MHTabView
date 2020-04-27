@@ -14,6 +14,14 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		BF6E82D224558A7C006DAADE /* MHUnScrollableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E82D124558A7C006DAADE /* MHUnScrollableViewController.swift */; };
+		BF6E82D424558A9D006DAADE /* MHAutoUnscrollableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E82D324558A9D006DAADE /* MHAutoUnscrollableViewController.swift */; };
+		BF6E82D824558ABD006DAADE /* MHScrollableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E82D724558ABD006DAADE /* MHScrollableViewController.swift */; };
+		BF6E82DA24558AC5006DAADE /* MHAutoScrollableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E82D924558AC5006DAADE /* MHAutoScrollableViewController.swift */; };
+		BF6E82DC24558ACF006DAADE /* MHChangeColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E82DB24558ACF006DAADE /* MHChangeColorViewController.swift */; };
+		BF6E82DE24558AD9006DAADE /* MHChangeTabSizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E82DD24558AD9006DAADE /* MHChangeTabSizeViewController.swift */; };
+		BF6E82E024558BF4006DAADE /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E82DF24558BF4006DAADE /* UIColorExtension.swift */; };
+		BF6E82E22456B390006DAADE /* MHDelegateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E82E12456B390006DAADE /* MHDelegateViewController.swift */; };
 		FA8219DA4D0D313D0E26075C /* Pods_MHTabView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04CB9AF823F85950F377DF0B /* Pods_MHTabView_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,10 +51,18 @@
 		728BB9BF8692AB0F538BA1B0 /* Pods-MHTabView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHTabView_Tests.release.xcconfig"; path = "Target Support Files/Pods-MHTabView_Tests/Pods-MHTabView_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		84E446F42445AAF2904ED847 /* Pods-MHTabView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHTabView_Tests.debug.xcconfig"; path = "Target Support Files/Pods-MHTabView_Tests/Pods-MHTabView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD2414DBC155761D97A5205A /* Pods-MHTabView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHTabView_Example.release.xcconfig"; path = "Target Support Files/Pods-MHTabView_Example/Pods-MHTabView_Example.release.xcconfig"; sourceTree = "<group>"; };
-		C38F7D88F3EEB047FD7F3F36 /* MHTabView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = MHTabView.podspec; path = ../MHTabView.podspec; sourceTree = "<group>"; };
+		BF6E82D124558A7C006DAADE /* MHUnScrollableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHUnScrollableViewController.swift; sourceTree = "<group>"; };
+		BF6E82D324558A9D006DAADE /* MHAutoUnscrollableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHAutoUnscrollableViewController.swift; sourceTree = "<group>"; };
+		BF6E82D724558ABD006DAADE /* MHScrollableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHScrollableViewController.swift; sourceTree = "<group>"; };
+		BF6E82D924558AC5006DAADE /* MHAutoScrollableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHAutoScrollableViewController.swift; sourceTree = "<group>"; };
+		BF6E82DB24558ACF006DAADE /* MHChangeColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHChangeColorViewController.swift; sourceTree = "<group>"; };
+		BF6E82DD24558AD9006DAADE /* MHChangeTabSizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHChangeTabSizeViewController.swift; sourceTree = "<group>"; };
+		BF6E82DF24558BF4006DAADE /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		BF6E82E12456B390006DAADE /* MHDelegateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHDelegateViewController.swift; sourceTree = "<group>"; };
+		C38F7D88F3EEB047FD7F3F36 /* MHTabView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MHTabView.podspec; path = ../MHTabView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C47BA881FC45AA2846CAC60E /* Pods-MHTabView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHTabView_Example.debug.xcconfig"; path = "Target Support Files/Pods-MHTabView_Example/Pods-MHTabView_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		E61A9C23A0CB08ECA5B2791F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		FFB5B2CE5A915E019B8838B8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		E61A9C23A0CB08ECA5B2791F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		FFB5B2CE5A915E019B8838B8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,12 +109,16 @@
 		607FACD21AFB9204008FA782 /* Example for MHTabView */ = {
 			isa = PBXGroup;
 			children = (
+				BF6E82D624558AAB006DAADE /* other */,
+				BF6E82D524558AA2006DAADE /* scrollable */,
+				BF6E82CE24558A04006DAADE /* unScrollable */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				BF6E82DF24558BF4006DAADE /* UIColorExtension.swift */,
 			);
 			name = "Example for MHTabView";
 			path = MHTabView;
@@ -147,8 +167,35 @@
 				84E446F42445AAF2904ED847 /* Pods-MHTabView_Tests.debug.xcconfig */,
 				728BB9BF8692AB0F538BA1B0 /* Pods-MHTabView_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		BF6E82CE24558A04006DAADE /* unScrollable */ = {
+			isa = PBXGroup;
+			children = (
+				BF6E82D124558A7C006DAADE /* MHUnScrollableViewController.swift */,
+				BF6E82D324558A9D006DAADE /* MHAutoUnscrollableViewController.swift */,
+			);
+			name = unScrollable;
+			sourceTree = "<group>";
+		};
+		BF6E82D524558AA2006DAADE /* scrollable */ = {
+			isa = PBXGroup;
+			children = (
+				BF6E82D724558ABD006DAADE /* MHScrollableViewController.swift */,
+				BF6E82D924558AC5006DAADE /* MHAutoScrollableViewController.swift */,
+			);
+			name = scrollable;
+			sourceTree = "<group>";
+		};
+		BF6E82D624558AAB006DAADE /* other */ = {
+			isa = PBXGroup;
+			children = (
+				BF6E82DB24558ACF006DAADE /* MHChangeColorViewController.swift */,
+				BF6E82DD24558AD9006DAADE /* MHChangeTabSizeViewController.swift */,
+				BF6E82E12456B390006DAADE /* MHDelegateViewController.swift */,
+			);
+			name = other;
 			sourceTree = "<group>";
 		};
 		F53B56F0C29F61F433200052 /* Frameworks */ = {
@@ -171,7 +218,7 @@
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				5FB90CCBE673F799DDAE6240 /* [CP] Embed Pods Frameworks */,
+				17DE08B1FAF20DAC5F8F2FDB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -207,6 +254,7 @@
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = MH;
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = CocoaPods;
@@ -227,6 +275,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -262,6 +311,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		17DE08B1FAF20DAC5F8F2FDB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MHTabView_Example/Pods-MHTabView_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MHTabView/MHTabView.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MHTabView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MHTabView_Example/Pods-MHTabView_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2E1F99BEFEAF65C05C21A1E8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -282,24 +351,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5FB90CCBE673F799DDAE6240 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MHTabView_Example/Pods-MHTabView_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/MHTabView/MHTabView.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MHTabView.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MHTabView_Example/Pods-MHTabView_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D2B7DE155CB65A6FC37B0C38 /* [CP] Check Pods Manifest.lock */ = {
@@ -331,8 +382,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF6E82D424558A9D006DAADE /* MHAutoUnscrollableViewController.swift in Sources */,
+				BF6E82DA24558AC5006DAADE /* MHAutoScrollableViewController.swift in Sources */,
+				BF6E82DE24558AD9006DAADE /* MHChangeTabSizeViewController.swift in Sources */,
+				BF6E82D224558A7C006DAADE /* MHUnScrollableViewController.swift in Sources */,
+				BF6E82E22456B390006DAADE /* MHDelegateViewController.swift in Sources */,
+				BF6E82DC24558ACF006DAADE /* MHChangeColorViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				BF6E82E024558BF4006DAADE /* UIColorExtension.swift in Sources */,
+				BF6E82D824558ABD006DAADE /* MHScrollableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +537,7 @@
 			baseConfigurationReference = C47BA881FC45AA2846CAC60E /* Pods-MHTabView_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MHTabView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -493,6 +553,7 @@
 			baseConfigurationReference = AD2414DBC155761D97A5205A /* Pods-MHTabView_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MHTabView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;

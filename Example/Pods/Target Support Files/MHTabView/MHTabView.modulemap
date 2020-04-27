@@ -1,0 +1,6 @@
+framework module MHTabView {
+  umbrella header "MHTabView-umbrella.h"
+
+  export *
+  module * { export * }
+}

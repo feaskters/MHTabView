@@ -6,3 +6,35 @@
 //
 
 import Foundation
+
+/**标签滚动样式*/
+public enum titleScrollViewStyle {
+    /**不可滚动，平均长度*/
+    case unscrollable
+    /**不可滚动，长度根据字数自适应*/
+    case autoUnscrollable
+    /**可以滚动，固定长度(使用tabwidth属性可以修改长度)*/
+    case scrollable
+    /**可以滚动，长度根据字数自适应*/
+    case autoScrollable
+}
+
+/**页面滚动样式*/
+public enum pageScrollViewStyle {
+    /**普通样式*/
+    case normal
+    /**占位其他样式*/
+    case other
+}
+
+struct setting {
+    
+    static let fontSize14 = UIFont.systemFont(ofSize: 14)
+    
+    static let fontSize16 = UIFont.systemFont(ofSize: 16)
+    
+    static let titleHeight: CGFloat = 40
+    
+    static let indicatorHeight: CGFloat = 3
+
+}

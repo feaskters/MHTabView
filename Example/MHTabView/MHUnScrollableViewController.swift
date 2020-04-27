@@ -7,13 +7,38 @@
 //
 
 import UIKit
+import MHTabView
 
 class MHUnScrollableViewController: UIViewController {
 
+    @IBOutlet weak var containerView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let titles = ["标题1", "标题2", "标题3", "标题4"]
+
+        let view1 = UIView.init()
+        view1.backgroundColor = UIColor(hexCode: "#d20962")
+
+        let view2 = UIView.init()
+        view2.backgroundColor = UIColor(hexCode: "#f47721")
+
+        let view3 = UIView.init()
+        view3.backgroundColor = UIColor(hexCode: "#7ac143")
+        
+        let view4 = UIView.init()
+        view4.backgroundColor = UIColor(hexCode: "#00a78e")
+
+        let tabview = MHTabView.init()
+        
+        tabview.titleStyle = .unscrollable
+        tabview.setTitlesAndPageViews(titles: titles, pageViews: [view1, view2, view3, view4])
+
+        tabview.frame = CGRect(x: 0, y: 0, width: containerView.frame.width, height: containerView.frame.height)
+        
+        self.containerView.addSubview(tabview)
     }
     
 

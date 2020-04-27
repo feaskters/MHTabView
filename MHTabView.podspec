@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'MHTabView'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of MHTabView.'
+  s.summary          = 'An easy way to use scroll tab bar.\n'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/ZhangMingHao/MHTabView'
+  s.homepage         = 'https://github.com/feaskters/MHTabView'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'ZhangMingHao' => '739296759@qq.com' }
-  s.source           = { :git => 'https://github.com/ZhangMingHao/MHTabView.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/feaskters/MHTabView.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
@@ -38,5 +38,5 @@ TODO: Add long description of the pod here.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'SnapKit'
 end
