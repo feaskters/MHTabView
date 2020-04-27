@@ -59,7 +59,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 tabview.titleStyle = .unscrollable
 ```
 
-![unscrollable](https://s1.ax1x.com/2020/04/27/JfgVNn.gif)
+[![JfgVNn.gif](https://s1.ax1x.com/2020/04/27/JfgVNn.gif)](https://imgchr.com/i/JfgVNn)
 
  - ### scrollable
 
