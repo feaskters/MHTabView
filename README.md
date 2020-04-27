@@ -9,7 +9,7 @@
 
 ## Contents
 
-- [Getting Started](#GettingStarted)
+- [Getting Started](#Getting Started)
 - [Installation](#Installation)
 - [Example](#Example)
 - [Author](#Author)
