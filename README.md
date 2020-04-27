@@ -9,15 +9,13 @@
 
 ## Contents
 
-- [Example](#Example)
+- [Getting Started](#Getting Started)
 - [Installation](#Installation)
+- [Example](#Example)
 - [Author](#Author)
 - [License](#License)
 
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
+## Getting Started
 
 ## Installation
 
@@ -27,6 +25,10 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'MHTabView'
 ```
+
+## Example
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Author
 
