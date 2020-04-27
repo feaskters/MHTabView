@@ -5,11 +5,19 @@
 [![License](https://img.shields.io/cocoapods/l/MHTabView.svg?style=flat)](https://cocoapods.org/pods/MHTabView)
 [![Platform](https://img.shields.io/cocoapods/p/MHTabView.svg?style=flat)](https://cocoapods.org/pods/MHTabView)
 
+- An easy way to use scroll tab bar
+
+## Contents
+
+- [Example](#Example)
+- [Installation](#Installation)
+- [Author](#Author)
+- [License](#License)
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
 
 ## Installation
 
