@@ -48,11 +48,13 @@ There are two ways to create your own tabview
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-### unscrollable
+ - ### unscrollable
 
 ```swift
 tabview.titleStyle = .unscrollable
 ```
+
+![unscrollable](https://s1.ax1x.com/2020/04/27/Jfg1HJ.gif)
 
 ## Author
 
