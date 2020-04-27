@@ -5,11 +5,17 @@
 [![License](https://img.shields.io/cocoapods/l/MHTabView.svg?style=flat)](https://cocoapods.org/pods/MHTabView)
 [![Platform](https://img.shields.io/cocoapods/p/MHTabView.svg?style=flat)](https://cocoapods.org/pods/MHTabView)
 
-## Example
+- An easy way to use scroll tab bar
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+## Contents
 
-## Requirements
+- [Getting Started](#Getting-Started)
+- [Installation](#Installation)
+- [Example](#Example)
+- [Author](#Author)
+- [License](#License)
+
+## Getting Started
 
 ## Installation
 
@@ -19,6 +25,10 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'MHTabView'
 ```
+
+## Example
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Author
 
