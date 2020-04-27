@@ -9,13 +9,14 @@
 
 ## Contents
 
-- [Getting Started](#Getting-Started)
 - [Installation](#Installation)
+
+- [Getting Started](#Getting-Started)
+  + [usage](#usage)
+
 - [Example](#Example)
 - [Author](#Author)
 - [License](#License)
-
-## Getting Started
 
 ## Installation
 
@@ -26,9 +27,28 @@ it, simply add the following line to your Podfile:
 pod 'MHTabView'
 ```
 
+## Getting Started
+
+### usage
+
+There are two ways to create your own tabview
+
+ 1. convenience init
+ ```swift
+ let tabview = MHTabView.init(withTitles: titles, pageViews: views)
+ ```
+ 
+ 2. init and set titles and pageviews
+ ```swift
+ let tabview = MHTabView.init()
+ tabview.setTitlesAndPageViews(titles: titles, pageViews: views)
+ ```
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+
 
 ## Author
 
