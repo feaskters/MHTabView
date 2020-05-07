@@ -58,8 +58,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ```swift
 tabview.titleStyle = .unscrollable
 ```
-
-![unscrollable](https://s1.ax1x.com/2020/04/27/JfgVNn.gif)
+![unscrollable](https://s1.ax1x.com/2020/04/27/JfzBqg.gif)
 
  - ### scrollable
 
@@ -75,7 +74,7 @@ tabview.titleStyle = .scrollable
 tabview.titleStyle = .autoScrollable
 ```
 
-![autoscrollable](https://s1.ax1x.com/2020/04/27/JfgZhq.gif)
+![autoscrollable](https://s1.ax1x.com/2020/04/27/JfzrZQ.gif)
 
  - ### autoUnscrollable
 
@@ -83,7 +82,7 @@ tabview.titleStyle = .autoScrollable
 tabview.titleStyle = .autoUnscrollable
 ```
 
-![autoUnscrollable](https://s1.ax1x.com/2020/04/27/Jfg1HJ.gif)
+![autoUnscrollable](https://s1.ax1x.com/2020/04/27/Jfz0sS.gif)
 
  - ### other
  
