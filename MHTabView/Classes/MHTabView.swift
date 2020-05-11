@@ -55,7 +55,7 @@ public class MHTabView: UIView, MHPageViewDelegate, MHTitleScrollViewDelegate {
     }
     
     /**indicatorView，无法改变frame*/
-    public var indicatorView: UIView? {
+    public var indicatorView: UIView! {
         get{
             return titleScrollView.indicatorInsideView
         }

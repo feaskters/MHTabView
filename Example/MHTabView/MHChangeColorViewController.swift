@@ -46,8 +46,7 @@ class MHChangeColorViewController: UIViewController {
         tabview.defaultColor = UIColor(hexCode: "#0099cc")
         tabview.selectedColor = UIColor(hexCode: "#511378")
         
-        tabview.indicatorView!.backgroundColor = UIColor(hexCode: "#FFC240")
-        tabview.indicatorView!.frame = CGRect(x: 0, y: 0, width: 100, height: 50)
+        tabview.indicatorView.backgroundColor = UIColor(hexCode: "#FFC240")
 
         tabview.frame = CGRect(x: 0, y: 0, width: containerView.frame.width, height: containerView.frame.height)
                
