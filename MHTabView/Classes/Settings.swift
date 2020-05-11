@@ -29,12 +29,12 @@ public enum pageScrollViewStyle {
 
 struct setting {
     
-    static let fontSize14 = UIFont.systemFont(ofSize: 14)
+    static var unselectedFont = UIFont.systemFont(ofSize: 14)
     
-    static let fontSize16 = UIFont.systemFont(ofSize: 16)
+    static var selectedFont = UIFont.systemFont(ofSize: 16)
     
-    static let titleHeight: CGFloat = 40
+    static var titleHeight: CGFloat = 40
     
-    static let indicatorHeight: CGFloat = 3
+    static var indicatorHeight: CGFloat = 3
 
 }

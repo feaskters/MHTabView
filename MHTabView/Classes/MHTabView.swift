@@ -54,6 +54,13 @@ public class MHTabView: UIView, MHPageViewDelegate, MHTitleScrollViewDelegate {
         }
     }
     
+    /**indicatorView，无法改变frame*/
+    public var indicatorView: UIView? {
+        get{
+            return titleScrollView.indicatorInsideView
+        }
+    }
+    
     var titleScrollView: MHTitleScrollView!
     
     var pageView: MHPageView!
@@ -139,3 +146,29 @@ public class MHTabView: UIView, MHPageViewDelegate, MHTitleScrollViewDelegate {
 
 }
 
+
+extension MHTabView{
+    /**修改选中按钮的字体
+     - parameters:
+        - font: 字体
+     */
+    public func setSelectedFont(_ font: UIFont){
+        setting.selectedFont = font
+    }
+    
+    /**修改未选中按钮的字体
+     - parameters:
+        - font: 字体
+     */
+    public func setUnSelectedFont(_ font: UIFont){
+        setting.unselectedFont = font
+    }
+    
+    /**修改指示器高度
+     - parameters:
+        - font: 字体
+     */
+    public func setIndicatorHeight(_ height: CGFloat){
+        setting.indicatorHeight = height
+    }
+}

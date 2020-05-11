@@ -1,7 +1,7 @@
 {
   "name": "MHTabView",
-  "version": "0.1.0",
-  "summary": "An easy way to use scroll tab bar.\\n",
+  "version": "1.0.2",
+  "summary": "An easy way to use scroll tab bar.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/feaskters/MHTabView",
   "license": {
@@ -13,15 +13,17 @@
   },
   "source": {
     "git": "https://github.com/feaskters/MHTabView.git",
-    "tag": "0.1.0"
+    "tag": "1.0.2"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "10.0"
   },
+  "swift_versions": "4.0",
   "source_files": "MHTabView/Classes/**/*",
   "dependencies": {
     "SnapKit": [
 
     ]
-  }
+  },
+  "swift_version": "4.0"
 }

@@ -36,6 +36,17 @@ class MHTitleScrollView: UIScrollView {
         self.showsHorizontalScrollIndicator = false
         self.bounces = false
         self.backgroundColor = .white
+        
+        //初始化滑动条
+        indicatorView = UIView.init()
+        indicatorView.backgroundColor = self.backgroundColor
+        
+        self.addSubview(indicatorView)
+        
+        indicatorInsideView = UIView.init()
+        indicatorInsideView.backgroundColor = self.btnColorSelected
+        indicatorInsideView.layer.cornerRadius = 5
+        indicatorView.addSubview(indicatorInsideView)
     }
     
     required init?(coder: NSCoder) {
@@ -81,22 +92,10 @@ class MHTitleScrollView: UIScrollView {
             btn.setTitle(titles[i - 1], for: .normal)
             btn.setTitleColor(btnColorDefault, for: .normal)
             btn.addTarget(self, action: #selector(MHTitleScrollView.btnClick(_:)), for: .touchUpInside)
-            btn.titleLabel?.font = setting.fontSize14
+            btn.titleLabel?.font = setting.unselectedFont
             buttons.append(btn)
             self.addSubview(btn)
         }
-        
-        //初始化滑动条
-        indicatorView = UIView.init()
-        indicatorView.backgroundColor = self.backgroundColor
-        
-        indicatorInsideView = UIView.init()
-        indicatorInsideView.backgroundColor = self.btnColorSelected
-        indicatorInsideView.layer.cornerRadius = 5
-        indicatorView.addSubview(indicatorInsideView)
-        
-        
-        self.addSubview(indicatorView)
         
         switch self.titleStyle {
         case .autoScrollable, .scrollable:
@@ -187,10 +186,10 @@ class MHTitleScrollView: UIScrollView {
                 for btn in self.buttons{
                     if btn.tag == sender.tag {
                         btn.setTitleColor(self.btnColorSelected, for: .normal)
-                        btn.titleLabel?.font = setting.fontSize16
+                        btn.titleLabel?.font = setting.selectedFont
                     }else{
                         btn.setTitleColor(self.btnColorDefault, for: .normal)
-                        btn.titleLabel?.font = setting.fontSize14
+                        btn.titleLabel?.font = setting.unselectedFont
                     }
                 }
                 
@@ -213,10 +212,10 @@ class MHTitleScrollView: UIScrollView {
                             finalX = 0
                         }
                         self.contentOffset = CGPoint(x: finalX, y: 0)
-                        self.indicatorInsideView.frame = CGRect(x: (sender.frame.width - sender.titleLabel!.frame.width) / 2, y: 0, width: sender.titleLabel!.frame.width, height: self.indicatorView.frame.height)
+                        self.indicatorInsideView.frame = CGRect(x: (sender.frame.width - sender.titleLabel!.frame.width - 5) / 2, y: 0, width: sender.titleLabel!.frame.width + 5, height: self.indicatorView.frame.height)
                         break
                     case .autoUnscrollable:
-                        self.indicatorInsideView.frame = CGRect(x: (sender.frame.width - sender.titleLabel!.frame.width) / 2, y: 0, width: sender.titleLabel!.frame.width, height: self.indicatorView.frame.height)
+                        self.indicatorInsideView.frame = CGRect(x: (sender.frame.width - sender.titleLabel!.frame.width - 5) / 2, y: 0, width: sender.titleLabel!.frame.width + 5, height: self.indicatorView.frame.height)
                         break
                     case .unscrollable:
                         self.indicatorInsideView.frame = CGRect(x: 0, y: 0, width: sender.frame.width, height: self.indicatorView.frame.height)
