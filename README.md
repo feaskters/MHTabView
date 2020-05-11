@@ -90,6 +90,7 @@ tabview.titleStyle = .autoUnscrollable
   ```swift
   tabview.defaultColor = .blue
   tabview.selectedColor = .red
+  tabview.indicatorView.backgroundColor = .green
   ```
   
   2. change width for scrollable style
@@ -105,6 +106,15 @@ tabview.titleStyle = .autoUnscrollable
     /**停止滚动后的回调函数(index, scrollview) -> (当前滚动到的位置, scrollView属性 )*/
     func MHTabViewDidEndDecelerating(_ index: Int, _ scrollview: UIScrollView)
   }
+  ```
+  
+  4. other APIs
+  ```swift
+  setSelectedFont(_ font: UIFont)//修改选中按钮的字体
+  
+  setUnSelectedFont(_ font: UIFont)//修改未选中按钮的字体
+  
+  setIndicatorHeight(_ height: CGFloat)//修改指示器高度
   ```
 
   ![delegate](https://s1.ax1x.com/2020/04/27/JfgEAs.gif)
