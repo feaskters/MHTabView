@@ -148,27 +148,40 @@ public class MHTabView: UIView, MHPageViewDelegate, MHTitleScrollViewDelegate {
 
 
 extension MHTabView{
-    /**修改选中按钮的字体
+    /**
+     修改选中按钮的字体
      - parameters:
         - font: 字体
      */
     public func setSelectedFont(_ font: UIFont){
-        setting.selectedFont = font
+        titleScrollView.selectedFont = font
     }
     
-    /**修改未选中按钮的字体
+    /**
+     修改未选中按钮的字体
      - parameters:
         - font: 字体
      */
     public func setUnSelectedFont(_ font: UIFont){
-        setting.unselectedFont = font
+        titleScrollView.unselectedFont = font
     }
     
-    /**修改指示器高度
+    /**
+     修改指示器高度
      - parameters:
-        - font: 字体
+        - height: 高度
      */
     public func setIndicatorHeight(_ height: CGFloat){
-        setting.indicatorHeight = height
+        titleScrollView.indicatorHeight = height
+    }
+    
+    /**
+     修改指示器宽度
+     - 仅限scrollable和unScrollable样式
+     - parameters:
+        - width: 宽度
+     */
+    public func setIndicatorWidth(_ width: CGFloat){
+        titleScrollView.indicatorWidth = width
     }
 }

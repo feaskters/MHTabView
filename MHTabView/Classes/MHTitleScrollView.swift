@@ -29,6 +29,12 @@ class MHTitleScrollView: UIScrollView {
     var btnColorSelected: UIColor = .red
     var btnColorDefault: UIColor = .gray
     
+    var unselectedFont = UIFont.systemFont(ofSize: 14)
+    var selectedFont = UIFont.systemFont(ofSize: 16)
+    
+    var indicatorHeight: CGFloat = 3
+    var indicatorWidth: CGFloat?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.isScrollEnabled = false
@@ -65,14 +71,14 @@ class MHTitleScrollView: UIScrollView {
         
         switch titleStyle {
         case .autoScrollable, .scrollable:
-            indicatorView.frame = CGRect(x: 0, y: setting.titleHeight - setting.indicatorHeight, width: buttons[0].titleLabel!.frame.width, height: setting.indicatorHeight)
+            indicatorView.frame = CGRect(x: 0, y: setting.titleHeight - indicatorHeight, width: buttons[0].titleLabel!.frame.width, height: indicatorHeight)
             break
         case .autoUnscrollable, .unscrollable:
             let w = self.frame.width / CGFloat(buttons.count)
             buttons[0].snp.updateConstraints { (maker) in
                 maker.width.equalTo(w)
             }
-            indicatorView.frame = CGRect(x: 0, y: setting.titleHeight - setting.indicatorHeight, width: w, height: setting.indicatorHeight)
+            indicatorView.frame = CGRect(x: 0, y: setting.titleHeight - indicatorHeight, width: w, height: indicatorHeight)
             break
         default:
             break
@@ -92,7 +98,7 @@ class MHTitleScrollView: UIScrollView {
             btn.setTitle(titles[i - 1], for: .normal)
             btn.setTitleColor(btnColorDefault, for: .normal)
             btn.addTarget(self, action: #selector(MHTitleScrollView.btnClick(_:)), for: .touchUpInside)
-            btn.titleLabel?.font = setting.unselectedFont
+            btn.titleLabel?.font = unselectedFont
             buttons.append(btn)
             self.addSubview(btn)
         }
@@ -186,10 +192,10 @@ class MHTitleScrollView: UIScrollView {
                 for btn in self.buttons{
                     if btn.tag == sender.tag {
                         btn.setTitleColor(self.btnColorSelected, for: .normal)
-                        btn.titleLabel?.font = setting.selectedFont
+                        btn.titleLabel?.font = self.selectedFont
                     }else{
                         btn.setTitleColor(self.btnColorDefault, for: .normal)
-                        btn.titleLabel?.font = setting.unselectedFont
+                        btn.titleLabel?.font = self.unselectedFont
                     }
                 }
                 
@@ -200,7 +206,7 @@ class MHTitleScrollView: UIScrollView {
                         for i in Range(0..<sender.tag - 1) {
                             finalX += self.buttons[i].frame.width
                         }
-                        self.indicatorView.frame = CGRect(x: finalX, y: setting.titleHeight - setting.indicatorHeight, width: sender.frame.width, height: setting.indicatorHeight)
+                        self.indicatorView.frame = CGRect(x: finalX, y: setting.titleHeight - self.indicatorHeight, width: sender.frame.width, height: self.indicatorHeight)
                         finalX += (self.buttons[sender.tag - 1].frame.width) / 2
                         
                         finalX -= self.frame.width / 2
@@ -218,10 +224,10 @@ class MHTitleScrollView: UIScrollView {
                         self.indicatorInsideView.frame = CGRect(x: (sender.frame.width - sender.titleLabel!.frame.width - 5) / 2, y: 0, width: sender.titleLabel!.frame.width + 5, height: self.indicatorView.frame.height)
                         break
                     case .unscrollable:
-                        self.indicatorInsideView.frame = CGRect(x: 0, y: 0, width: sender.frame.width, height: self.indicatorView.frame.height)
+                        self.indicatorInsideView.frame = CGRect(x: (sender.frame.width - (self.indicatorWidth ?? sender.frame.width)) / 2, y: 0, width: self.indicatorWidth ?? sender.frame.width, height: self.indicatorView.frame.height)
                         break
                     case .scrollable:
-                        self.indicatorInsideView.frame = CGRect(x: 0, y: 0, width: sender.frame.width, height: self.indicatorView.frame.height)
+                        self.indicatorInsideView.frame = CGRect(x: (sender.frame.width - (self.indicatorWidth ?? sender.frame.width)) / 2, y: 0, width: self.indicatorWidth ?? sender.frame.width, height: self.indicatorView.frame.height)
                         var x = CGFloat(sender.tag - 1) * self.buttonWidth + self.buttonWidth / 2 - (self.frame.width / 2)
                         if x < 0 {
                             x = 0
@@ -243,10 +249,10 @@ class MHTitleScrollView: UIScrollView {
     func indicatorMove(to x: CGFloat) {
         switch titleStyle {
         case .unscrollable, .autoUnscrollable:
-            self.indicatorView.frame = CGRect(x: x * self.contentSize.width, y: setting.titleHeight - setting.indicatorHeight, width: indicatorView.frame.width, height: setting.indicatorHeight)
+            self.indicatorView.frame = CGRect(x: x * self.contentSize.width, y: setting.titleHeight - indicatorHeight, width: indicatorView.frame.width, height: indicatorHeight)
             break
         case .scrollable:
-            self.indicatorView.frame = CGRect(x: x * self.contentSize.width, y: setting.titleHeight - setting.indicatorHeight, width: indicatorView.frame.width, height: setting.indicatorHeight)
+            self.indicatorView.frame = CGRect(x: x * self.contentSize.width, y: setting.titleHeight - indicatorHeight, width: indicatorView.frame.width, height: indicatorHeight)
             break
         case .autoScrollable:
             var finalX: CGFloat = 0
@@ -254,7 +260,7 @@ class MHTitleScrollView: UIScrollView {
                 finalX += buttons[i].frame.width
             }
             finalX += ((x * CGFloat(buttons.count)) - CGFloat(Int(x * CGFloat(buttons.count)))) * buttons[Int(x * CGFloat(buttons.count))].frame.width
-            self.indicatorView.frame = CGRect(x: finalX, y: setting.titleHeight - setting.indicatorHeight, width: indicatorView.frame.width, height: setting.indicatorHeight)
+            self.indicatorView.frame = CGRect(x: finalX, y: setting.titleHeight - indicatorHeight, width: indicatorView.frame.width, height: indicatorHeight)
             break
         default:
             break

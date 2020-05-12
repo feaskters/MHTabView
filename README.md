@@ -115,6 +115,8 @@ tabview.titleStyle = .autoUnscrollable
   setUnSelectedFont(_ font: UIFont)//修改未选中按钮的字体
   
   setIndicatorHeight(_ height: CGFloat)//修改指示器高度
+  
+  setIndicatorWidth(_ width: CGFloat)//修改指示器宽度
   ```
 
   ![delegate](https://s1.ax1x.com/2020/04/27/JfgEAs.gif)

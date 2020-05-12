@@ -45,7 +45,6 @@ class MHChangeTabSizeViewController: UIViewController {
         //修改tab长度
         tabview.tabWidth = 150
         tabview.setIndicatorHeight(5)
-                
 
         tabview.frame = CGRect(x: 0, y: 0, width: containerView.frame.width, height: containerView.frame.height)
                
