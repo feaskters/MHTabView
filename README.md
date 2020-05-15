@@ -117,6 +117,10 @@ tabview.titleStyle = .autoUnscrollable
   setIndicatorHeight(_ height: CGFloat)//修改指示器高度
   
   setIndicatorWidth(_ width: CGFloat)//修改指示器宽度
+   
+  setDefaultPage(withIndex index: Int)//设置默认选中的页面
+
+  public func setAnimateDuration(_ duration: TimeInterval)//设置动画过渡时间
   ```
 
   ![delegate](https://s1.ax1x.com/2020/04/27/JfgEAs.gif)

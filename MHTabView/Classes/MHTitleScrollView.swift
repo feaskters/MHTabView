@@ -22,6 +22,8 @@ class MHTitleScrollView: UIScrollView {
     
     var buttons: [UIButton]!
     var buttonWidth: CGFloat = 100
+    var defaultSelectedIndex: Int = 0
+    var animateDuration: TimeInterval = 0.2
     
     var indicatorView: UIView!
     var indicatorInsideView: UIView!
@@ -84,8 +86,8 @@ class MHTitleScrollView: UIScrollView {
             break
         }
         
-        //默认选中第一个按钮
-        btnClick(buttons[0])
+        //默认选中按钮
+        btnClick(buttons[defaultSelectedIndex], withDuration: 0)
     }
     
     func setUp(){
@@ -182,13 +184,17 @@ class MHTitleScrollView: UIScrollView {
         }
     }
     
+    @objc func btnClick(_ sender: UIButton) {
+        self.btnClick(sender, withDuration: animateDuration)
+    }
+    
     /**按钮点击*/
-    @objc func btnClick(_ sender: UIButton){
+    @objc func btnClick(_ sender: UIButton, withDuration duration: TimeInterval){
         
-        UIView.animate(withDuration: 0.2, animations: {
+        UIView.animate(withDuration: duration, animations: {
             self.titleScrollViewDelegate?.titleClick(sender)
         }) { (Bool) in
-            UIView.animate(withDuration: 0.2) {
+            UIView.animate(withDuration: duration) {
                 for btn in self.buttons{
                     if btn.tag == sender.tag {
                         btn.setTitleColor(self.btnColorSelected, for: .normal)

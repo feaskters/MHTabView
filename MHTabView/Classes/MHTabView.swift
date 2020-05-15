@@ -184,4 +184,20 @@ extension MHTabView{
     public func setIndicatorWidth(_ width: CGFloat){
         titleScrollView.indicatorWidth = width
     }
+    
+    /**
+     设置默认选中的页面
+     - parameters:
+        - index: 页标，从0开始
+     */
+    public func setDefaultPage(withIndex index: Int) {
+        titleScrollView.defaultSelectedIndex = index
+        pageView.contentOffset = CGPoint(x: CGFloat(index) * self.frame.width, y: 0)
+    }
+    
+    /**
+     设置动画过渡时间*/
+    public func setAnimateDuration(_ duration: TimeInterval) {
+        titleScrollView.animateDuration = duration
+    }
 }
