@@ -192,7 +192,6 @@ extension MHTabView{
      */
     public func setDefaultPage(withIndex index: Int) {
         titleScrollView.defaultSelectedIndex = index
-        pageView.contentOffset = CGPoint(x: CGFloat(index) * self.frame.width, y: 0)
     }
     
     /**
