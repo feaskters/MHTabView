@@ -108,6 +108,8 @@ tabview.titleStyle = .autoUnscrollable
   }
   ```
   
+  ![delegate](https://s1.ax1x.com/2020/04/27/JfgEAs.gif)
+  
   4. other APIs
   ```swift
   setSelectedFont(_ font: UIFont)//修改选中按钮的字体
@@ -120,10 +122,9 @@ tabview.titleStyle = .autoUnscrollable
    
   setDefaultPage(withIndex index: Int)//设置默认选中的页面
 
-  public func setAnimateDuration(_ duration: TimeInterval)//设置动画过渡时间
+  setAnimateDuration(_ duration: TimeInterval)//设置动画过渡时间
   ```
 
-  ![delegate](https://s1.ax1x.com/2020/04/27/JfgEAs.gif)
 
 ## Author
 
