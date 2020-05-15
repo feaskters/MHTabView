@@ -115,8 +115,6 @@ class MHTitleScrollView: UIScrollView {
         default:
             break
         }
-
-        print(self.contentSize)
         
     }
     
@@ -257,7 +255,6 @@ class MHTitleScrollView: UIScrollView {
     func indicatorMove(to x: CGFloat) {
         switch titleStyle {
         case .unscrollable, .autoUnscrollable:
-            print(self.contentSize)
             self.indicatorView.frame = CGRect(x: x * self.contentSize.width, y: setting.titleHeight - indicatorHeight, width: indicatorView.frame.width, height: indicatorHeight)
             break
         case .scrollable:
