@@ -115,6 +115,8 @@ class MHTitleScrollView: UIScrollView {
         default:
             break
         }
+
+        print(self.contentSize)
         
     }
     
@@ -144,6 +146,7 @@ class MHTitleScrollView: UIScrollView {
                 }
             }
         }
+        contentSize = CGSize(width: self.frame.width, height: setting.titleHeight)
     }
     
     func setUpScrollable(){
@@ -207,7 +210,6 @@ class MHTitleScrollView: UIScrollView {
                 
                 switch self.titleStyle {
                     case .autoScrollable:
-
                         var finalX: CGFloat = 0
                         for i in Range(0..<sender.tag - 1) {
                             finalX += self.buttons[i].frame.width
@@ -255,6 +257,7 @@ class MHTitleScrollView: UIScrollView {
     func indicatorMove(to x: CGFloat) {
         switch titleStyle {
         case .unscrollable, .autoUnscrollable:
+            print(self.contentSize)
             self.indicatorView.frame = CGRect(x: x * self.contentSize.width, y: setting.titleHeight - indicatorHeight, width: indicatorView.frame.width, height: indicatorHeight)
             break
         case .scrollable:

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MHTabView'
-  s.version          = '1.1.5'
+  s.version          = '1.1.6'
   s.summary          = 'An easy way to use scroll tab bar.'
 
 # This description is used to generate tags and improve search results.
