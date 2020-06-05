@@ -132,9 +132,9 @@ public class MHTabView: UIView, MHPageViewDelegate, MHTitleScrollViewDelegate {
         self.titleScrollView.indicatorMove(to: x)
         
     }
-    
-    func pageViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let index = Int(scrollView.contentOffset.x / scrollView.frame.width)
+
+    func pageViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let index = Int(targetContentOffset.pointee.x / scrollView.frame.width)
         titleScrollView.btnClick(titleScrollView.buttons[index])
     }
     

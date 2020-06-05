@@ -10,7 +10,7 @@ import SnapKit
 
 @objc protocol MHPageViewDelegate {
     func pageViewDidScroll(_ scrollView: UIScrollView)
-    func pageViewDidEndDecelerating(_ scrollView: UIScrollView)
+    func pageViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>)
 }
 
 class MHPageView: UIScrollView, UIScrollViewDelegate {
@@ -75,13 +75,10 @@ class MHPageView: UIScrollView, UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         pageViewDelegate?.pageViewDidScroll(scrollView)
-        
-        let floatx = scrollView.contentOffset.x / scrollView.frame.width
-        let intx = Int(floatx)
-        //判断滚动位置是否为整数
-        if floatx == CGFloat(intx) {
-            pageViewDelegate?.pageViewDidEndDecelerating(scrollView)
-        }
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        pageViewDelegate?.pageViewWillEndDragging(scrollView, withVelocity: velocity, targetContentOffset: targetContentOffset)
     }
     
 //    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
