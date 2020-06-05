@@ -75,10 +75,17 @@ class MHPageView: UIScrollView, UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         pageViewDelegate?.pageViewDidScroll(scrollView)
+        
+        let floatx = scrollView.contentOffset.x / scrollView.frame.width
+        let intx = Int(floatx)
+        //判断滚动位置是否为整数
+        if floatx == CGFloat(intx) {
+            pageViewDelegate?.pageViewDidEndDecelerating(scrollView)
+        }
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        pageViewDelegate?.pageViewDidEndDecelerating(scrollView)
-    }
+//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+//        pageViewDelegate?.pageViewDidEndDecelerating(scrollView)
+//    }
     
 }
