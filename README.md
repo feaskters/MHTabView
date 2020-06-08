@@ -6,6 +6,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/MHTabView.svg?style=flat)](https://cocoapods.org/pods/MHTabView)
 
 - An easy way to use scroll tab bar
+- If MHTabView helps you, please give me a star, thanks!✨✨✨
 
 ## Contents
 
