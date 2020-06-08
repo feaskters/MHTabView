@@ -11,6 +11,7 @@ import SnapKit
 @objc protocol MHPageViewDelegate {
     func pageViewDidScroll(_ scrollView: UIScrollView)
     func pageViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>)
+    func pageViewDidEndDecelerating(_ scrollView: UIScrollView)
 }
 
 class MHPageView: UIScrollView, UIScrollViewDelegate {
@@ -81,8 +82,8 @@ class MHPageView: UIScrollView, UIScrollViewDelegate {
         pageViewDelegate?.pageViewWillEndDragging(scrollView, withVelocity: velocity, targetContentOffset: targetContentOffset)
     }
     
-//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-//        pageViewDelegate?.pageViewDidEndDecelerating(scrollView)
-//    }
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        pageViewDelegate?.pageViewDidEndDecelerating(scrollView)
+    }
     
 }

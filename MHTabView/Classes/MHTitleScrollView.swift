@@ -251,7 +251,7 @@ class MHTitleScrollView: UIScrollView {
         
     }
     
-    /**指示器移动，按钮变色*/
+    /**指示器移动*/
     func indicatorMove(to x: CGFloat) {
         switch titleStyle {
         case .unscrollable, .autoUnscrollable:
@@ -271,7 +271,19 @@ class MHTitleScrollView: UIScrollView {
         default:
             break
         }
-       
+    }
+    
+    /**按钮变色*/
+    func buttonsColorChange(_ sender: UIButton) {
+        for btn in self.buttons{
+            if btn.tag == sender.tag {
+                btn.setTitleColor(self.btnColorSelected, for: .normal)
+                btn.titleLabel?.font = self.selectedFont
+            }else{
+                btn.setTitleColor(self.btnColorDefault, for: .normal)
+                btn.titleLabel?.font = self.unselectedFont
+            }
+        }
     }
 
 }
