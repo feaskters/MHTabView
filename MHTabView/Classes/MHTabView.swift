@@ -115,6 +115,12 @@ public class MHTabView: UIView, MHPageViewDelegate, MHTitleScrollViewDelegate {
     }
     
     func setUp() {
+        if titleScrollView != nil {
+            titleScrollView.removeFromSuperview()
+        }
+        if pageView != nil {
+            pageView.removeFromSuperview()
+        }
         titleScrollView = MHTitleScrollView(titleStyle: self.titleStyle, titles: self.titles)
         titleScrollView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: setting.titleHeight)
         titleScrollView.titleScrollViewDelegate = self
