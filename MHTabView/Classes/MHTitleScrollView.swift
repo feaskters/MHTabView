@@ -209,7 +209,7 @@ class MHTitleScrollView: UIScrollView {
                 switch self.titleStyle {
                     case .autoScrollable:
                         var finalX: CGFloat = 0
-                        for i in Range(0..<sender.tag - 1) {
+                        for i in 0..<sender.tag - 1 {
                             finalX += self.buttons[i].frame.width
                         }
                         self.indicatorView.frame = CGRect(x: finalX, y: setting.titleHeight - self.indicatorHeight, width: sender.frame.width, height: self.indicatorHeight)
@@ -262,7 +262,7 @@ class MHTitleScrollView: UIScrollView {
             break
         case .autoScrollable:
             var finalX: CGFloat = 0
-            for i in Range(0..<Int(x * CGFloat(buttons.count))){
+            for i in 0..<Int(x * CGFloat(buttons.count)){
                 finalX += buttons[i].frame.width
             }
             finalX += ((x * CGFloat(buttons.count)) - CGFloat(Int(x * CGFloat(buttons.count)))) * buttons[Int(x * CGFloat(buttons.count))].frame.width

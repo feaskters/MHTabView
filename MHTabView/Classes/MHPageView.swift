@@ -58,7 +58,7 @@ class MHPageView: UIScrollView, UIScrollViewDelegate {
     func layOut() {
         self.contentSize = CGSize(width: self.frame.width * CGFloat(pageViews.count), height: self.frame.height)
                
-        for i in Range(0..<pageViews.count) {
+        for i in 0..<pageViews.count {
             let page = pageViews[i]
             page.frame = CGRect(x: CGFloat(i) * self.frame.width, y: 0, width: self.frame.width, height: self.frame.height)
         }

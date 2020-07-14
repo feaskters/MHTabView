@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MHTabView'
-  s.version          = '1.1.10'
+  s.version          = '1.1.11'
   s.summary          = 'An easy way to use scroll tab bar.'
 
 # This description is used to generate tags and improve search results.
@@ -29,7 +29,7 @@ TODO: Add long description of the pod here.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '10.0'
-  s.swift_versions = '4.0'
+  s.swift_versions = '5.0'
 
   s.source_files = 'MHTabView/Classes/**/*'
   
