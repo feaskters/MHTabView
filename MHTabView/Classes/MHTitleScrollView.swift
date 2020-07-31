@@ -67,7 +67,13 @@ class MHTitleScrollView: UIScrollView {
         self.titles = titles
     }
     
+    var isDrawed = false// 是否已绘制过一次
+    
     override func draw(_ rect: CGRect) {
+        
+        guard !isDrawed else {
+            return
+        }
         
         setUp()
         

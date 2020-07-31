@@ -35,9 +35,11 @@ class MHUnScrollableViewController: UIViewController {
         
         tabview.titleStyle = .unscrollable
         tabview.setTitlesAndPageViews(titles: titles, pageViews: [view1, view2, view3, view4])
-        tabview.frame = CGRect(x: 0, y: 0, width: containerView.frame.width, height: containerView.frame.height)
         
         self.containerView.addSubview(tabview)
+        tabview.snp.makeConstraints { (maker) in
+            maker.edges.equalToSuperview()
+        }
     }
     
 

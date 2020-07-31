@@ -47,10 +47,12 @@ class MHChangeColorViewController: UIViewController {
         tabview.selectedColor = UIColor(hexCode: "#511378")
         
         tabview.indicatorView.backgroundColor = UIColor(hexCode: "#FFC240")
-
-        tabview.frame = CGRect(x: 0, y: 0, width: containerView.frame.width, height: containerView.frame.height)
-               
+        
         self.containerView.addSubview(tabview)
+        
+        tabview.snp.makeConstraints { (maker) in
+            maker.edges.equalToSuperview()
+        }
     }
     
 

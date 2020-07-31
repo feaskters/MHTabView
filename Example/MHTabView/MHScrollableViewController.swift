@@ -41,10 +41,12 @@ class MHScrollableViewController: UIViewController {
 
         let tabview = MHTabView.init(withTitles: titles, pageViews: [view1, view2, view3, view4, view5, view6, view7])
         tabview.titleStyle = .scrollable
-
-        tabview.frame = CGRect(x: 0, y: 0, width: containerView.frame.width, height: containerView.frame.height)
                
         self.containerView.addSubview(tabview)
+        
+        tabview.snp.makeConstraints { (maker) in
+            maker.edges.equalToSuperview()
+        }
     }
     
 
