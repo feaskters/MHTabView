@@ -12,6 +12,8 @@ import MHTabView
 class MHAutoUnscrollableViewController: UIViewController {
     
     @IBOutlet weak var containerView: UIView!
+    var tabview: MHTabView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,7 +32,7 @@ class MHAutoUnscrollableViewController: UIViewController {
         let view4 = UIView.init()
         view4.backgroundColor = UIColor(hexCode: "#00a78e")
         
-        let tabview = MHTabView.init(withTitles: titles, pageViews: [view1, view2, view3, view4])
+        tabview = MHTabView.init(withTitles: titles, pageViews: [view1, view2, view3, view4])
         tabview.titleStyle = .autoUnscrollable
         
         self.containerView.addSubview(tabview)
@@ -38,8 +40,8 @@ class MHAutoUnscrollableViewController: UIViewController {
         tabview.snp.makeConstraints { (maker) in
             maker.edges.equalToSuperview()
         }
+        
     }
-    
     
     /*
      // MARK: - Navigation

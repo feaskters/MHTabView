@@ -210,4 +210,14 @@ extension MHTabView{
     public func setAnimateDuration(_ duration: TimeInterval) {
         titleScrollView.animateDuration = duration
     }
+    
+    /**
+     设置选中的页面(需在页面加载完成之后调用，如需设置默认选中页，使用setDefaultPage方法)
+     - parameters:
+        - index: 页标，从0开始
+     */
+    public func setSelectedPage(withIndex index: Int) {
+        assert(index >= 0 && index < titleScrollView.buttons.count, "index范围越界")
+        titleScrollView.btnClick(titleScrollView.buttons[index])
+    }
 }
