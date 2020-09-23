@@ -43,6 +43,10 @@ class MHAutoUnscrollableViewController: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        tabview.setSelectedPage(withIndex: 2)
+    }
+    
     /*
      // MARK: - Navigation
      

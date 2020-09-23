@@ -220,4 +220,15 @@ extension MHTabView{
         assert(index >= 0 && index < titleScrollView.buttons.count, "index范围越界")
         titleScrollView.btnClick(titleScrollView.buttons[index])
     }
+    
+    /**
+     修改指定标题
+     - parameters:
+        - index: 页标，从0开始
+        - title: 标题
+     */
+    public func modifyTitle(withIndex index: Int, newTitle: String) {
+        assert(index >= 0 && index < titleScrollView.buttons.count, "index范围越界")
+        titleScrollView.buttons[index].setTitle(newTitle, for: .normal)
+    }
 }

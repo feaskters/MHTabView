@@ -113,17 +113,21 @@ tabview.titleStyle = .autoUnscrollable
   
   4. other APIs
   ```swift
-  setSelectedFont(_ font: UIFont)//修改选中按钮的字体
+  setSelectedFont(_ font: UIFont)// 修改选中按钮的字体
   
-  setUnSelectedFont(_ font: UIFont)//修改未选中按钮的字体
+  setUnSelectedFont(_ font: UIFont)// 修改未选中按钮的字体
   
-  setIndicatorHeight(_ height: CGFloat)//修改指示器高度
+  setIndicatorHeight(_ height: CGFloat)// 修改指示器高度
   
-  setIndicatorWidth(_ width: CGFloat)//修改指示器宽度
+  setIndicatorWidth(_ width: CGFloat)// 修改指示器宽度
    
-  setDefaultPage(withIndex index: Int)//设置默认选中的页面
+  setDefaultPage(withIndex index: Int)// 设置默认选中的页面
 
-  setAnimateDuration(_ duration: TimeInterval)//设置动画过渡时间
+  setAnimateDuration(_ duration: TimeInterval)// 设置动画过渡时间
+  
+  setSelectedPage(withIndex index: Int)// 设置选中页面
+  
+  modifyTitle(withIndex index: Int, newTitle: String)// 修改指定标题
   ```
 
 
