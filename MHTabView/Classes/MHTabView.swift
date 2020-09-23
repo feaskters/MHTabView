@@ -225,10 +225,14 @@ extension MHTabView{
      修改指定标题
      - parameters:
         - index: 页标，从0开始
-        - title: 标题
+        - newTitle: 新标题
      */
     public func modifyTitle(withIndex index: Int, newTitle: String) {
-        assert(index >= 0 && index < titleScrollView.buttons.count, "index范围越界")
-        titleScrollView.buttons[index].setTitle(newTitle, for: .normal)
+        assert(index >= 0 && index < titles.count, "index范围越界")
+        titles[index] = newTitle
+        titleScrollView.titles[index] = newTitle
+        if titleScrollView.buttons != nil && titleScrollView.buttons.count != 0 {
+            titleScrollView.buttons[index].setTitle(newTitle, for: .normal)
+        }
     }
 }
