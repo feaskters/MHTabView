@@ -128,6 +128,8 @@ tabview.titleStyle = .autoUnscrollable
   setSelectedPage(withIndex index: Int)// 设置选中页面
   
   modifyTitle(withIndex index: Int, newTitle: String)// 修改指定标题
+
+  setTitleHeight(_ height: CGFloat)//修改标题高度
   ```
 
 
