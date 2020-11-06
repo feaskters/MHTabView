@@ -14,6 +14,9 @@ import SnapKit
 
 class MHTitleScrollView: UIScrollView {
     
+    /**标题高度*/
+    var titleHeight: CGFloat = setting.titleHeight
+    
     var titleStyle: titleScrollViewStyle!
     
     weak var titleScrollViewDelegate: MHTitleScrollViewDelegate?
@@ -79,14 +82,14 @@ class MHTitleScrollView: UIScrollView {
         
         switch titleStyle {
         case .autoScrollable, .scrollable:
-            indicatorView.frame = CGRect(x: 0, y: setting.titleHeight - indicatorHeight, width: buttons[0].titleLabel!.frame.width, height: indicatorHeight)
+            indicatorView.frame = CGRect(x: 0, y: titleHeight - indicatorHeight, width: buttons[0].titleLabel!.frame.width, height: indicatorHeight)
             break
         case .autoUnscrollable, .unscrollable:
             let w = self.frame.width / CGFloat(buttons.count)
             buttons[0].snp.updateConstraints { (maker) in
                 maker.width.equalTo(w)
             }
-            indicatorView.frame = CGRect(x: 0, y: setting.titleHeight - indicatorHeight, width: w, height: indicatorHeight)
+            indicatorView.frame = CGRect(x: 0, y: titleHeight - indicatorHeight, width: w, height: indicatorHeight)
             break
         default:
             break
@@ -130,14 +133,14 @@ class MHTitleScrollView: UIScrollView {
                 btn.snp.makeConstraints { (maker) in
                     maker.top.equalToSuperview()
                     maker.width.equalTo(10)
-                    maker.height.equalTo(setting.titleHeight)
+                    maker.height.equalTo(titleHeight)
                     maker.left.equalToSuperview()
                 }
             }else if btn.tag == buttons.count {
                 btn.snp.makeConstraints { (maker) in
                     maker.width.equalTo(buttons[0].snp.width)
                     maker.top.equalToSuperview()
-                    maker.height.equalTo(setting.titleHeight)
+                    maker.height.equalTo(titleHeight)
                     maker.left.equalTo(buttons[btn.tag - 2].snp.right)
                     maker.right.equalToSuperview()
                 }
@@ -145,19 +148,19 @@ class MHTitleScrollView: UIScrollView {
                 btn.snp.makeConstraints { (maker) in
                     maker.width.equalTo(buttons[0].snp.width)
                     maker.top.equalToSuperview()
-                    maker.height.equalTo(setting.titleHeight)
+                    maker.height.equalTo(titleHeight)
                     maker.left.equalTo(buttons[btn.tag - 2].snp.right)
                 }
             }
         }
-        contentSize = CGSize(width: self.frame.width, height: setting.titleHeight)
+        contentSize = CGSize(width: self.frame.width, height: titleHeight)
     }
     
     func setUpScrollable(){
         self.isScrollEnabled = true
         
         if self.titleStyle == titleScrollViewStyle.scrollable {
-            contentSize = CGSize(width: self.buttonWidth * CGFloat(buttons.count), height: setting.titleHeight)
+            contentSize = CGSize(width: self.buttonWidth * CGFloat(buttons.count), height: titleHeight)
         }
         
         for btn in buttons {
@@ -170,21 +173,21 @@ class MHTitleScrollView: UIScrollView {
                 btn.snp.makeConstraints { (maker) in
                     maker.top.equalToSuperview()
                     maker.width.equalTo(w)
-                    maker.height.equalTo(setting.titleHeight)
+                    maker.height.equalTo(titleHeight)
                     maker.left.equalToSuperview()
                 }
             }else if btn.tag == buttons.count {
                 btn.snp.makeConstraints { (maker) in
                     maker.width.equalTo(w)
                     maker.top.equalToSuperview()
-                    maker.height.equalTo(setting.titleHeight)
+                    maker.height.equalTo(titleHeight)
                     maker.left.equalTo(buttons[btn.tag - 2].snp.right)
                 }
             }else{
                 btn.snp.makeConstraints { (maker) in
                     maker.width.equalTo(w)
                     maker.top.equalToSuperview()
-                    maker.height.equalTo(setting.titleHeight)
+                    maker.height.equalTo(titleHeight)
                     maker.left.equalTo(buttons[btn.tag - 2].snp.right)
                 }
             }
@@ -218,7 +221,7 @@ class MHTitleScrollView: UIScrollView {
                         for i in 0..<sender.tag - 1 {
                             finalX += self.buttons[i].frame.width
                         }
-                        self.indicatorView.frame = CGRect(x: finalX, y: setting.titleHeight - self.indicatorHeight, width: sender.frame.width, height: self.indicatorHeight)
+                        self.indicatorView.frame = CGRect(x: finalX, y: self.titleHeight - self.indicatorHeight, width: sender.frame.width, height: self.indicatorHeight)
                         finalX += (self.buttons[sender.tag - 1].frame.width) / 2
                         
                         finalX -= self.frame.width / 2
@@ -261,10 +264,10 @@ class MHTitleScrollView: UIScrollView {
     func indicatorMove(to x: CGFloat) {
         switch titleStyle {
         case .unscrollable, .autoUnscrollable:
-            self.indicatorView.frame = CGRect(x: x * self.contentSize.width, y: setting.titleHeight - indicatorHeight, width: indicatorView.frame.width, height: indicatorHeight)
+            self.indicatorView.frame = CGRect(x: x * self.contentSize.width, y: titleHeight - indicatorHeight, width: indicatorView.frame.width, height: indicatorHeight)
             break
         case .scrollable:
-            self.indicatorView.frame = CGRect(x: x * self.contentSize.width, y: setting.titleHeight - indicatorHeight, width: indicatorView.frame.width, height: indicatorHeight)
+            self.indicatorView.frame = CGRect(x: x * self.contentSize.width, y: titleHeight - indicatorHeight, width: indicatorView.frame.width, height: indicatorHeight)
             break
         case .autoScrollable:
             var finalX: CGFloat = 0
@@ -272,7 +275,7 @@ class MHTitleScrollView: UIScrollView {
                 finalX += buttons[i].frame.width
             }
             finalX += ((x * CGFloat(buttons.count)) - CGFloat(Int(x * CGFloat(buttons.count)))) * buttons[Int(x * CGFloat(buttons.count))].frame.width
-            self.indicatorView.frame = CGRect(x: finalX, y: setting.titleHeight - indicatorHeight, width: indicatorView.frame.width, height: indicatorHeight)
+            self.indicatorView.frame = CGRect(x: finalX, y: titleHeight - indicatorHeight, width: indicatorView.frame.width, height: indicatorHeight)
             break
         default:
             break

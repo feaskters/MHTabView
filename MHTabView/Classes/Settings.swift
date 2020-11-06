@@ -28,5 +28,6 @@ public enum pageScrollViewStyle {
 }
 
 struct setting {
+    /**标题高度，默认40*/
     static var titleHeight: CGFloat = 40
 }

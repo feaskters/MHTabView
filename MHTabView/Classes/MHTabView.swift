@@ -15,6 +15,17 @@ public protocol MHTabViewDelegate {
 
 public class MHTabView: UIView, MHPageViewDelegate, MHTitleScrollViewDelegate {
 
+    /**标题高度*/
+    private var titleHeight: CGFloat = setting.titleHeight {
+        didSet {
+            if oldValue != titleHeight {
+                    titleScrollView.snp.updateConstraints { (maker) in
+                        maker.height.equalTo(titleHeight)
+                    }
+            }
+        }
+    }
+    
     /**标题列表*/
     private var titles: [String]!
     
@@ -103,7 +114,7 @@ public class MHTabView: UIView, MHPageViewDelegate, MHTitleScrollViewDelegate {
             maker.left.equalToSuperview()
             maker.top.equalToSuperview()
             maker.right.equalToSuperview()
-            maker.height.equalTo(setting.titleHeight)
+            maker.height.equalTo(titleHeight)
         }
         
         pageView.snp.makeConstraints { (maker) in
@@ -122,12 +133,13 @@ public class MHTabView: UIView, MHPageViewDelegate, MHTitleScrollViewDelegate {
             pageView.removeFromSuperview()
         }
         titleScrollView = MHTitleScrollView(titleStyle: self.titleStyle, titles: self.titles)
-        titleScrollView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: setting.titleHeight)
+        titleScrollView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: titleHeight)
         titleScrollView.titleScrollViewDelegate = self
+        titleScrollView.titleHeight = titleHeight
         self.addSubview(titleScrollView)
         
         pageView = MHPageView(withStyle: .normal, pageViews: self.pageViews)
-        pageView.frame = CGRect(x: 0, y: setting.titleHeight, width: self.frame.width, height: self.frame.height - setting.titleHeight)
+        pageView.frame = CGRect(x: 0, y: titleHeight, width: self.frame.width, height: self.frame.height - titleHeight)
         pageView.pageViewDelegate = self
         self.addSubview(pageView)
     }
@@ -234,5 +246,15 @@ extension MHTabView{
         if titleScrollView.buttons != nil && titleScrollView.buttons.count != 0 {
             titleScrollView.buttons[index].setTitle(newTitle, for: .normal)
         }
+    }
+    
+    /**
+     修改标题高度
+     - parameters:
+        - height: 标题高度
+     */
+    public func setTitleHeight(_ height: CGFloat) {
+        titleHeight = height
+        titleScrollView?.titleHeight = height
     }
 }

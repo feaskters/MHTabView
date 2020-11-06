@@ -1,5 +1,5 @@
 PODS:
-  - MHTabView (1.1.13):
+  - MHTabView (1.2.3):
     - SnapKit
   - SnapKit (5.0.1)
 
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  MHTabView: beebbcfb2cf3571e7f466b5fc86658e2aeb7edf8
+  MHTabView: c0b15dc722dde13efbaa0d31c5e8d6ffdf4f993d
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
 PODFILE CHECKSUM: b9deaf34b3470eee0ee7f71f6f8d780002f66a99
