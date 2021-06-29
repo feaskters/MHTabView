@@ -17,6 +17,8 @@ public enum titleScrollViewStyle {
     case scrollable
     /**可以滚动，长度根据字数自适应*/
     case autoScrollable
+    /**可以滚动，菜单项居左对其，根据字数自适应宽度，指示器宽度固定可修改*/
+    case leftScrollable
 }
 
 /**页面滚动样式*/

@@ -147,7 +147,12 @@ public class MHTabView: UIView, MHPageViewDelegate, MHTitleScrollViewDelegate {
     // MARK: - MHPageViewDelegate
     func pageViewDidScroll(_ scrollView: UIScrollView) {
         let x = CGFloat(scrollView.contentOffset.x / scrollView.contentSize.width)
-        self.titleScrollView.indicatorMove(to: x)
+        var rate = scrollView.contentOffset.x
+        while rate >= scrollView.bounds.width {
+            rate -= scrollView.bounds.width
+        }
+        rate /= scrollView.bounds.width
+        self.titleScrollView.indicatorMove(to: x, rate: rate)
         
     }
 

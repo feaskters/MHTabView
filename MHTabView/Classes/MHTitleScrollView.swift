@@ -91,6 +91,8 @@ class MHTitleScrollView: UIScrollView {
             }
             indicatorView.frame = CGRect(x: 0, y: titleHeight - indicatorHeight, width: w, height: indicatorHeight)
             break
+        case .leftScrollable:
+            indicatorView.frame = CGRect(x: buttons[0].titleLabel!.frame.width / 2.0 - 0.5, y: titleHeight - indicatorHeight, width: buttons[0].titleLabel!.frame.width, height: indicatorHeight)
         default:
             break
         }
@@ -115,7 +117,7 @@ class MHTitleScrollView: UIScrollView {
         }
         
         switch self.titleStyle {
-        case .autoScrollable, .scrollable:
+        case .autoScrollable, .scrollable, .leftScrollable:
             setUpScrollable()
             break
         case .unscrollable, .autoUnscrollable:
@@ -165,7 +167,7 @@ class MHTitleScrollView: UIScrollView {
         
         for btn in buttons {
             var w = buttonWidth
-            if self.titleStyle == titleScrollViewStyle.autoScrollable {
+            if self.titleStyle == titleScrollViewStyle.autoScrollable || self.titleStyle == .leftScrollable {
                 w = btn.titleLabel!.intrinsicContentSize.width + 30
                 self.contentSize = CGSize(width: contentSize.width + w, height: contentSize.height)
             }
@@ -216,44 +218,63 @@ class MHTitleScrollView: UIScrollView {
                 }
                 
                 switch self.titleStyle {
-                    case .autoScrollable:
-                        var finalX: CGFloat = 0
-                        for i in 0..<sender.tag - 1 {
-                            finalX += self.buttons[i].frame.width
-                        }
-                        self.indicatorView.frame = CGRect(x: finalX, y: self.titleHeight - self.indicatorHeight, width: sender.frame.width, height: self.indicatorHeight)
-                        finalX += (self.buttons[sender.tag - 1].frame.width) / 2
-                        
-                        finalX -= self.frame.width / 2
-                        
-                        if finalX > self.contentSize.width - self.frame.width {
-                            finalX = self.contentSize.width - self.frame.width
-                        }
-                        if finalX < 0 {
-                            finalX = 0
-                        }
-                        self.contentOffset = CGPoint(x: finalX, y: 0)
-                        self.indicatorInsideView.frame = CGRect(x: (sender.frame.width - sender.titleLabel!.frame.width - 5) / 2, y: 0, width: sender.titleLabel!.frame.width + 5, height: self.indicatorView.frame.height)
-                        break
-                    case .autoUnscrollable:
-                        self.indicatorInsideView.frame = CGRect(x: (sender.frame.width - sender.titleLabel!.frame.width - 5) / 2, y: 0, width: sender.titleLabel!.frame.width + 5, height: self.indicatorView.frame.height)
-                        break
-                    case .unscrollable:
-                        self.indicatorInsideView.frame = CGRect(x: (sender.frame.width - (self.indicatorWidth ?? sender.frame.width)) / 2, y: 0, width: self.indicatorWidth ?? sender.frame.width, height: self.indicatorView.frame.height)
-                        break
-                    case .scrollable:
-                        self.indicatorInsideView.frame = CGRect(x: (sender.frame.width - (self.indicatorWidth ?? sender.frame.width)) / 2, y: 0, width: self.indicatorWidth ?? sender.frame.width, height: self.indicatorView.frame.height)
-                        var x = CGFloat(sender.tag - 1) * self.buttonWidth + self.buttonWidth / 2 - (self.frame.width / 2)
-                        if x < 0 {
-                            x = 0
-                        }
-                        if x > self.contentSize.width - self.frame.width {
-                            x = self.contentSize.width - self.frame.width
-                        }
-                        self.contentOffset = CGPoint(x: x, y: 0)
-                        break
-                    default:
-                        break
+                case .autoScrollable:
+                    var finalX: CGFloat = 0
+                    for i in 0..<sender.tag - 1 {
+                        finalX += self.buttons[i].frame.width
+                    }
+                    self.indicatorView.frame = CGRect(x: finalX, y: self.titleHeight - self.indicatorHeight, width: sender.frame.width, height: self.indicatorHeight)
+                    finalX += (self.buttons[sender.tag - 1].frame.width) / 2
+                    
+                    finalX -= self.frame.width / 2
+                    
+                    if finalX > self.contentSize.width - self.frame.width {
+                        finalX = self.contentSize.width - self.frame.width
+                    }
+                    if finalX < 0 {
+                        finalX = 0
+                    }
+                    self.contentOffset = CGPoint(x: finalX, y: 0)
+                    self.indicatorInsideView.frame = CGRect(x: (sender.frame.width - sender.titleLabel!.frame.width - 5) / 2, y: 0, width: sender.titleLabel!.frame.width + 5, height: self.indicatorView.frame.height)
+                    break
+                case .leftScrollable:
+                    var finalX: CGFloat = 0
+                    for i in 0..<sender.tag - 1 {
+                        finalX += self.buttons[i].frame.width
+                    }
+                    self.indicatorView.frame = CGRect(x: finalX + self.buttons[sender.tag - 1].frame.width / 2.0, y: self.titleHeight - self.indicatorHeight, width: 1, height: 10)
+                    finalX += (self.buttons[sender.tag - 1].frame.width) / 2
+                    
+                    finalX -= self.frame.width / 2
+                    
+                    if finalX > self.contentSize.width - self.frame.width {
+                        finalX = self.contentSize.width - self.frame.width
+                    }
+                    if finalX < 0 {
+                        finalX = 0
+                    }
+                    self.contentOffset = CGPoint(x: finalX, y: 0)
+                    self.indicatorInsideView.frame = CGRect(x: -(self.indicatorWidth ?? 20) / 2.0, y: 0, width: self.indicatorWidth ?? 20, height: self.indicatorView.frame.height)
+                    break
+                case .autoUnscrollable:
+                    self.indicatorInsideView.frame = CGRect(x: (sender.frame.width - sender.titleLabel!.frame.width - 5) / 2, y: 0, width: sender.titleLabel!.frame.width + 5, height: self.indicatorView.frame.height)
+                    break
+                case .unscrollable:
+                    self.indicatorInsideView.frame = CGRect(x: (sender.frame.width - (self.indicatorWidth ?? sender.frame.width)) / 2, y: 0, width: self.indicatorWidth ?? sender.frame.width, height: self.indicatorView.frame.height)
+                    break
+                case .scrollable:
+                    self.indicatorInsideView.frame = CGRect(x: (sender.frame.width - (self.indicatorWidth ?? sender.frame.width)) / 2, y: 0, width: self.indicatorWidth ?? sender.frame.width, height: self.indicatorView.frame.height)
+                    var x = CGFloat(sender.tag - 1) * self.buttonWidth + self.buttonWidth / 2 - (self.frame.width / 2)
+                    if x < 0 {
+                        x = 0
+                    }
+                    if x > self.contentSize.width - self.frame.width {
+                        x = self.contentSize.width - self.frame.width
+                    }
+                    self.contentOffset = CGPoint(x: x, y: 0)
+                    break
+                default:
+                    break
                 }
             }
         }
@@ -261,7 +282,7 @@ class MHTitleScrollView: UIScrollView {
     }
     
     /**指示器移动*/
-    func indicatorMove(to x: CGFloat) {
+    func indicatorMove(to x: CGFloat, rate: CGFloat = 0) {
         switch titleStyle {
         case .unscrollable, .autoUnscrollable:
             self.indicatorView.frame = CGRect(x: x * self.contentSize.width, y: titleHeight - indicatorHeight, width: indicatorView.frame.width, height: indicatorHeight)
@@ -275,6 +296,18 @@ class MHTitleScrollView: UIScrollView {
                 finalX += buttons[i].frame.width
             }
             finalX += ((x * CGFloat(buttons.count)) - CGFloat(Int(x * CGFloat(buttons.count)))) * buttons[Int(x * CGFloat(buttons.count))].frame.width
+            self.indicatorView.frame = CGRect(x: finalX, y: titleHeight - indicatorHeight, width: indicatorView.frame.width, height: indicatorHeight)
+            break
+        case .leftScrollable:
+            var finalX: CGFloat = 0
+            for i in 0..<Int(x * CGFloat(buttons.count)){
+                finalX += buttons[i].frame.width
+            }
+            let index = Int(x * CGFloat(buttons.count))
+            finalX += CGFloat(buttons[index].frame.width / 2.0)
+            if index < buttons.count - 1 {
+                finalX += (buttons[index+1].frame.width + buttons[index].frame.width) * rate / 2.0
+            }
             self.indicatorView.frame = CGRect(x: finalX, y: titleHeight - indicatorHeight, width: indicatorView.frame.width, height: indicatorHeight)
             break
         default:
