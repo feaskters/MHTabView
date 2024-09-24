@@ -1,6 +1,5 @@
 # MHTabView
 
-[![CI Status](https://img.shields.io/travis/ZhangMingHao/MHTabView.svg?style=flat)](https://travis-ci.org/ZhangMingHao/MHTabView)
 [![Version](https://img.shields.io/cocoapods/v/MHTabView.svg?style=flat)](https://cocoapods.org/pods/MHTabView)
 [![License](https://img.shields.io/cocoapods/l/MHTabView.svg?style=flat)](https://github.com/feaskters/MHTabView/blob/master/LICENSE)
 [![Platform](https://img.shields.io/cocoapods/p/MHTabView.svg?style=flat)](https://cocoapods.org/pods/MHTabView)
